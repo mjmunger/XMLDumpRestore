@@ -1,0 +1,335 @@
+<?xml version="1.0"?>
+<mysqldump xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+<database name="phpant">
+	<table_data name="Version">
+	</table_data>
+	<table_data name="users_roles">
+	<row>
+		<field name="users_roles_id">1</field>
+		<field name="users_roles_title">Admin</field>
+		<field name="users_roles_role">A</field>
+	</row>
+	</table_data>
+	<table_data name="users">
+	<row>
+		<field name="users_id">1</field>
+		<field name="users_email">michael@highpoweredhelp.com</field>
+		<field name="users_password">sha256:1000:ZAI+EiDE+NMdXPAspmpcDuiiNPOc5H72:f/NnjE4uD0G+HkN</field>
+		<field name="users_first">Michael</field>
+		<field name="users_last">Munger</field>
+		<field name="users_setup">Y</field>
+		<field name="users_nonce" xsi:nil="true" />
+		<field name="users_token">26bce1a2</field>
+		<field name="users_active">Y</field>
+		<field name="users_last_login">1475520393</field>
+		<field name="users_mobile_token" xsi:nil="true" />
+		<field name="users_public_key" xsi:nil="true" />
+		<field name="users_owner_id" xsi:nil="true" />
+		<field name="users_timezone" xsi:nil="true" />
+		<field name="users_roles_id">1</field>
+	</row>
+	<row>
+		<field name="users_id">2</field>
+		<field name="users_email">itatartrate@precompounding.co.uk</field>
+		<field name="users_password">$2y$10$eM4iUk/NqBf3Gjd5m0GetevniEKZuui02ml6oW0rs/B/s4A/vkvwC</field>
+		<field name="users_first">Susanna</field>
+		<field name="users_last">Whtie</field>
+		<field name="users_setup">N</field>
+		<field name="users_nonce" xsi:nil="true" />
+		<field name="users_token" xsi:nil="true" />
+		<field name="users_active">Y</field>
+		<field name="users_last_login" xsi:nil="true" />
+		<field name="users_mobile_token" xsi:nil="true" />
+		<field name="users_public_key" xsi:nil="true" />
+		<field name="users_owner_id" xsi:nil="true" />
+		<field name="users_timezone" xsi:nil="true" />
+		<field name="users_roles_id">1</field>
+	</row>
+	<row>
+		<field name="users_id">3</field>
+		<field name="users_email">tephramancy@gatewise.co.uk</field>
+		<field name="users_password">$2y$10$TBuc/1gDoi3ynm6fZuGJTe0Xc7sgZO0N4TLPykdpueUcCekUA0Ofy</field>
+		<field name="users_first">Augustus</field>
+		<field name="users_last">Stilwagen</field>
+		<field name="users_setup">N</field>
+		<field name="users_nonce" xsi:nil="true" />
+		<field name="users_token" xsi:nil="true" />
+		<field name="users_active">Y</field>
+		<field name="users_last_login" xsi:nil="true" />
+		<field name="users_mobile_token" xsi:nil="true" />
+		<field name="users_public_key" xsi:nil="true" />
+		<field name="users_owner_id" xsi:nil="true" />
+		<field name="users_timezone" xsi:nil="true" />
+		<field name="users_roles_id">1</field>
+	</row>
+	<row>
+		<field name="users_id">4</field>
+		<field name="users_email">unsanctimoniousness@coenoecic.edu</field>
+		<field name="users_password">$2y$10$tPEKFJo6YUXslXqFex/NzuNKwXVjPJKNE7zVdcm2eQC9R1nBOD2j2</field>
+		<field name="users_first">Jesenia</field>
+		<field name="users_last">Scanio</field>
+		<field name="users_setup">N</field>
+		<field name="users_nonce" xsi:nil="true" />
+		<field name="users_token" xsi:nil="true" />
+		<field name="users_active">Y</field>
+		<field name="users_last_login" xsi:nil="true" />
+		<field name="users_mobile_token" xsi:nil="true" />
+		<field name="users_public_key" xsi:nil="true" />
+		<field name="users_owner_id" xsi:nil="true" />
+		<field name="users_timezone" xsi:nil="true" />
+		<field name="users_roles_id">1</field>
+	</row>
+	<row>
+		<field name="users_id">5</field>
+		<field name="users_email">extranatural@possumwood.net</field>
+		<field name="users_password">$2y$10$Sw1JUKy1LsSXJI12GlqtB.LhySi9WNPgRvhB8y0p1CAco2PL1ZMbe</field>
+		<field name="users_first">Geoffrey</field>
+		<field name="users_last">Orlander</field>
+		<field name="users_setup">N</field>
+		<field name="users_nonce" xsi:nil="true" />
+		<field name="users_token" xsi:nil="true" />
+		<field name="users_active">Y</field>
+		<field name="users_last_login" xsi:nil="true" />
+		<field name="users_mobile_token" xsi:nil="true" />
+		<field name="users_public_key" xsi:nil="true" />
+		<field name="users_owner_id" xsi:nil="true" />
+		<field name="users_timezone" xsi:nil="true" />
+		<field name="users_roles_id">1</field>
+	</row>
+	<row>
+		<field name="users_id">6</field>
+		<field name="users_email">ureteral@amorphy.edu</field>
+		<field name="users_password">$2y$10$J5aXat5qPoP6Y6O.oXkLn.HsLLPB0N9ChDKk.0mNTZS/zRgNDjiG.</field>
+		<field name="users_first">Irvin</field>
+		<field name="users_last">Lizaola</field>
+		<field name="users_setup">N</field>
+		<field name="users_nonce" xsi:nil="true" />
+		<field name="users_token" xsi:nil="true" />
+		<field name="users_active">Y</field>
+		<field name="users_last_login" xsi:nil="true" />
+		<field name="users_mobile_token" xsi:nil="true" />
+		<field name="users_public_key" xsi:nil="true" />
+		<field name="users_owner_id" xsi:nil="true" />
+		<field name="users_timezone" xsi:nil="true" />
+		<field name="users_roles_id">1</field>
+	</row>
+	</table_data>
+	<table_data name="api_keys">
+	<row>
+		<field name="api_keys_id">9</field>
+		<field name="api_keys_key">dpzavyngfhgzbawbuhsxvbrgtshncmxgywhtuvzac</field>
+		<field name="api_keys_info">asdfasdf</field>
+		<field name="api_keys_enabled">N</field>
+		<field name="api_keys_generated">2016-02-29 04:20:10</field>
+	</row>
+	<row>
+		<field name="api_keys_id">10</field>
+		<field name="api_keys_key">tqvrvqtupfwdnmruhvngfzcerpwtxfmrwfervykhe</field>
+		<field name="api_keys_info">Test key</field>
+		<field name="api_keys_enabled">N</field>
+		<field name="api_keys_generated">2016-02-29 04:34:59</field>
+	</row>
+	<row>
+		<field name="api_keys_id">11</field>
+		<field name="api_keys_key">refehfrywbwadpcnhrhvntrtwqhsptmcyshgyyeva</field>
+		<field name="api_keys_info">asdf</field>
+		<field name="api_keys_enabled">N</field>
+		<field name="api_keys_generated">2016-02-29 04:59:09</field>
+	</row>
+	<row>
+		<field name="api_keys_id">12</field>
+		<field name="api_keys_key">bxaseqebkeuqahagfvvwtwzfqfzyqhxseygkppnxt</field>
+		<field name="api_keys_info">1234</field>
+		<field name="api_keys_enabled">N</field>
+		<field name="api_keys_generated">2016-02-29 05:00:48</field>
+	</row>
+	<row>
+		<field name="api_keys_id">13</field>
+		<field name="api_keys_key">hfzfdghfxzxvnxpdnycexynfunnntwdaccffmrpgq</field>
+		<field name="api_keys_info">1234</field>
+		<field name="api_keys_enabled">N</field>
+		<field name="api_keys_generated">2016-02-29 05:01:06</field>
+	</row>
+	<row>
+		<field name="api_keys_id">14</field>
+		<field name="api_keys_key">fctczwgwnbsgxevvdunmqtwwtxwsxxvcznfzhqvvr</field>
+		<field name="api_keys_info">asdf123</field>
+		<field name="api_keys_enabled">N</field>
+		<field name="api_keys_generated">2016-02-29 05:01:41</field>
+	</row>
+	<row>
+		<field name="api_keys_id">15</field>
+		<field name="api_keys_key">kvthubxvqwpmsucceyzctctbsnrfmtwwnqdfsaaew</field>
+		<field name="api_keys_info">asdf123</field>
+		<field name="api_keys_enabled">N</field>
+		<field name="api_keys_generated">2016-02-29 05:02:01</field>
+	</row>
+	<row>
+		<field name="api_keys_id">16</field>
+		<field name="api_keys_key">vhmrrrqzpnhsyacfuaayfksrvqtsvwarenfvcvvrg</field>
+		<field name="api_keys_info">Dev</field>
+		<field name="api_keys_enabled">Y</field>
+		<field name="api_keys_generated">2016-02-29 05:02:51</field>
+	</row>
+	<row>
+		<field name="api_keys_id">17</field>
+		<field name="api_keys_key">zpfdymmfywzepfzugrzdrxvmcacddwgdkpggztpxq</field>
+		<field name="api_keys_info">Foo App</field>
+		<field name="api_keys_enabled">N</field>
+		<field name="api_keys_generated">2016-02-29 05:03:18</field>
+	</row>
+	<row>
+		<field name="api_keys_id">18</field>
+		<field name="api_keys_key">cgmckutavuhbdqhmkwgekqhrdxhqyadagqctgwtcq</field>
+		<field name="api_keys_info">Bar App</field>
+		<field name="api_keys_enabled">Y</field>
+		<field name="api_keys_generated">2016-02-29 05:11:01</field>
+	</row>
+	<row>
+		<field name="api_keys_id">19</field>
+		<field name="api_keys_key">mgsekgfttwtanbqfeqthcybsrzrxqbdzhweucmmvf</field>
+		<field name="api_keys_info">Some User</field>
+		<field name="api_keys_enabled">Y</field>
+		<field name="api_keys_generated">2016-02-29 05:14:47</field>
+	</row>
+	<row>
+		<field name="api_keys_id">20</field>
+		<field name="api_keys_key">gentxyezqtxuuafgkhhmrdawgmstarvgwfaueeuuy</field>
+		<field name="api_keys_info">Something else</field>
+		<field name="api_keys_enabled">Y</field>
+		<field name="api_keys_generated">2016-03-01 02:17:32</field>
+	</row>
+	</table_data>
+	<table_data name="email_log">
+	</table_data>
+	<table_data name="logs">
+	</table_data>
+	<table_data name="settings">
+	<row>
+		<field name="settings_id">1</field>
+		<field name="settings_key">enabledAppsList</field>
+		<field name="settings_value">{&quot;+Core App Manager&quot;:&quot;\/home\/michael\/php-ant\/includes\/apps\/ant-app-plugin-manager\/app.php&quot;,&quot;Config Management&quot;:&quot;\/home\/michael\/php-ant\/includes\/apps\/ant-app-configs\/app.php&quot;,&quot;Default Grammar&quot;:&quot;\/home\/michael\/php-ant\/includes\/apps\/ant-app-default\/app.php&quot;,&quot;PHPAnt Authenticator&quot;:&quot;\/home\/michael\/php-ant\/includes\/apps\/ant-app-authenticator\/app.php&quot;}</field>
+	</row>
+	<row>
+		<field name="settings_id">2</field>
+		<field name="settings_key">signing-key</field>
+		<field name="settings_value">/home/michael/private.key</field>
+	</row>
+	<row>
+		<field name="settings_id">3</field>
+		<field name="settings_key">BlacklistDisabled</field>
+		<field name="settings_value">1</field>
+	</row>
+	</table_data>
+	<table_data name="user_tokens">
+	<row>
+		<field name="user_tokens_id">92</field>
+		<field name="user_tokens_token">463f4b5ff3885ebc0d33ee2c5ec732d2af69f6152cefd4becbffb7bf74cd9ac8</field>
+		<field name="user_tokens_expiry">2016-10-05 05:58:59</field>
+		<field name="users_id">1</field>
+	</row>
+	<row>
+		<field name="user_tokens_id">93</field>
+		<field name="user_tokens_token">d6cbec51334a8054a1ef46508bf92badce119bd7fb6441bcb434ebc91f212f9d</field>
+		<field name="user_tokens_expiry">2016-10-05 05:58:59</field>
+		<field name="users_id">2</field>
+	</row>
+	<row>
+		<field name="user_tokens_id">94</field>
+		<field name="user_tokens_token">d48c3659bdf66e2eccce42f4111c95e8505ed3da2706c740890f62daf3f2a213</field>
+		<field name="user_tokens_expiry">2016-10-05 05:58:59</field>
+		<field name="users_id">3</field>
+	</row>
+	<row>
+		<field name="user_tokens_id">95</field>
+		<field name="user_tokens_token">309e228a3c7d252f0939d8d0517d04d9b9f874bab4eec4c4218f952edd4d85d9</field>
+		<field name="user_tokens_expiry">2016-10-05 05:58:59</field>
+		<field name="users_id">4</field>
+	</row>
+	<row>
+		<field name="user_tokens_id">96</field>
+		<field name="user_tokens_token">e1261474304406f7a14844227fe4c74261544c2427b5b765ce6225f076879827</field>
+		<field name="user_tokens_expiry">2016-10-05 05:58:59</field>
+		<field name="users_id">5</field>
+	</row>
+	<row>
+		<field name="user_tokens_id">97</field>
+		<field name="user_tokens_token">97577059f6d16ea6503739151273b18934916c74873a3f020e749e2c25892cb6</field>
+		<field name="user_tokens_expiry">2016-10-05 05:58:59</field>
+		<field name="users_id">6</field>
+	</row>
+	<row>
+		<field name="user_tokens_id">98</field>
+		<field name="user_tokens_token">70800c40b939a576f08334ec47d5976a0bd9a515003518df39f3f0ec175d4279</field>
+		<field name="user_tokens_expiry">2016-10-14 05:58:59</field>
+		<field name="users_id">1</field>
+	</row>
+	<row>
+		<field name="user_tokens_id">99</field>
+		<field name="user_tokens_token">0423809fc5f5785af5c08a6fbbd045cc8f883ecded80bd32e522b1b14746ebb9</field>
+		<field name="user_tokens_expiry">2016-10-14 05:58:59</field>
+		<field name="users_id">2</field>
+	</row>
+	<row>
+		<field name="user_tokens_id">100</field>
+		<field name="user_tokens_token">78522eca2047c0cc52b6e2d43659df0456a6caadcd907b9c60ae1888aec530e7</field>
+		<field name="user_tokens_expiry">2016-10-14 05:58:59</field>
+		<field name="users_id">3</field>
+	</row>
+	<row>
+		<field name="user_tokens_id">101</field>
+		<field name="user_tokens_token">23056492adba4d625e1d9f7f4595e0c045048f8bc9038defe3a786187e402f79</field>
+		<field name="user_tokens_expiry">2016-10-14 05:58:59</field>
+		<field name="users_id">4</field>
+	</row>
+	<row>
+		<field name="user_tokens_id">102</field>
+		<field name="user_tokens_token">1b1d22e12520d99b55ca22f4ced7e0e597d0afcaccb212f50e3534b8cd3da52c</field>
+		<field name="user_tokens_expiry">2016-10-14 05:58:59</field>
+		<field name="users_id">5</field>
+	</row>
+	<row>
+		<field name="user_tokens_id">103</field>
+		<field name="user_tokens_token">b371e794156036937d462c35f1acf6bfa02de92c57d91d171dec5a04485c366e</field>
+		<field name="user_tokens_expiry">2016-10-14 05:58:59</field>
+		<field name="users_id">6</field>
+	</row>
+	<row>
+		<field name="user_tokens_id">104</field>
+		<field name="user_tokens_token">839a6775802a56108d226217b82689f77a3143c5cfae7589840bffb1807790c3</field>
+		<field name="user_tokens_expiry">2016-11-03 05:58:59</field>
+		<field name="users_id">1</field>
+	</row>
+	<row>
+		<field name="user_tokens_id">105</field>
+		<field name="user_tokens_token">3fe0e0ebf84b38e8e22b5e44e87cd217d7e515ecaa1a9df90dc88134994e5320</field>
+		<field name="user_tokens_expiry">2016-11-03 05:58:59</field>
+		<field name="users_id">2</field>
+	</row>
+	<row>
+		<field name="user_tokens_id">106</field>
+		<field name="user_tokens_token">e447d662ebbec1fdadc7fd919efea7ff21cc0db1d1f8ae010be80c8817a29d0e</field>
+		<field name="user_tokens_expiry">2016-11-03 05:58:59</field>
+		<field name="users_id">3</field>
+	</row>
+	<row>
+		<field name="user_tokens_id">107</field>
+		<field name="user_tokens_token">8bfbdec6c9bcf8f0c48235a1b20e0651b6f526e4fb8e117234b6ad859c3ef4a2</field>
+		<field name="user_tokens_expiry">2016-11-03 05:58:59</field>
+		<field name="users_id">4</field>
+	</row>
+	<row>
+		<field name="user_tokens_id">108</field>
+		<field name="user_tokens_token">4b31d0f3514015dc6e7bc92f02e4aa716804040a3598af6a002c052865c69e32</field>
+		<field name="user_tokens_expiry">2016-11-03 05:58:59</field>
+		<field name="users_id">5</field>
+	</row>
+	<row>
+		<field name="user_tokens_id">109</field>
+		<field name="user_tokens_token">1bc8c2a4d379fd6e16a53d7f8dceb9001fe9bb744759a66b98f61398abd3fcb3</field>
+		<field name="user_tokens_expiry">2016-11-03 05:58:59</field>
+		<field name="users_id">6</field>
+	</row>
+	</table_data>	
+</database>
+</mysqldump>

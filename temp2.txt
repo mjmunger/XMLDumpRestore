@@ -1,0 +1,15 @@
+PHPUnit 6.1.3 by Sebastian Bergmann and contributors.
+
+F                                                                   1 / 1 (100%)
+
+Time: 83 ms, Memory: 8.00MB
+
+There was 1 failure:
+
+1) XMLTest::testLoadTables
+Failed asserting that null is true.
+
+/home/michael/php/XMLDumpRestore/tests/ReadXMLTest.php:32
+
+FAILURES!
+Tests: 1, Assertions: 1, Failures: 1.
