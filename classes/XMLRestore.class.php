@@ -1,34 +1,66 @@
 <?php
 
 namespace XMLRestore;
+use \DOMDocument;
 
 class XMLRestore
 {
     public $xmlFilePath = NULL;
-    public $Xml         = NULL;
+    public $XmlDoc      = NULL;
     public $database    = NULL;
+    public $PDO         = NULL;
     public $tables      = [];
 
-    function __construct($xmlFilePath) {
+    function __construct($xmlFilePath, $PDO) {
         $this->xmlFilePath = $xmlFilePath;
+        $this->PDO = $PDO;
     }
 
     function getDatabase() {
-        $this->Xml = simplexml_load_file($this->xmlFilePath);
-        foreach($this->Xml->database[0]->attributes() as $attr => $value) {
-            if($attr == 'name') {
-                $this->database = (string) $value;
-                return $this->database;
-            }
+
+        $this->XmlDoc = new DOMDocument();
+        $this->XmlDoc->load($this->xmlFilePath);
+
+        //var_dump($this->XmlDoc);
+
+        foreach($this->XmlDoc->getElementsByTagName('database') as $Node) {
+            //Get the attributes for this node.
+            $this->database = (string) $Node->getAttribute("name");
+            return $this->database;
+
         }
         throw new Exception("Database name attribute not found in database element!", 1);
     }
 
     function loadTables() {
-        foreach($this->Xml->database->table_data as $table) {
-            $T = new XMLTable($table);
-            array_push($this->tables, $T);
+
+        $nodes = $this->XmlDoc->getElementsByTagName("table_data");
+        
+        foreach($nodes as $node) {
+            $name = (string) $node->getAttribute("name");
+            $T = new XMLTable($name, $node, $this->PDO);
+            $this->tables[$name] = $T;
         }
         return true;
     }
+
+    function getTable($name) {
+        if(!isset($this->tables[$name])) return false;
+        return $this->tables[$name];
+    }
+
+    //Turn off foreign key checking so we can do some real damage.
+    function prepareForRestore() {
+        $sql = "SET FOREIGN_KEY_CHECKS=0";
+        $stmt = $this->PDO->prepare($sql);
+        return $stmt->execute();
+    }
+
+    //Turn on foreign key checks because we are not insane.
+    function postRestoreOps() {
+        $sql = "SET FOREIGN_KEY_CHECKS=1";
+        $stmt = $this->PDO->prepare($sql);
+        return $stmt->execute();
+    }
+
 }
