@@ -30,6 +30,11 @@ class XMLTable
         }
         $Row = $Rows->item(0);
 
+        if($Row === NULL) {
+            echo $this->tableName . " does not have any rows to restore." . PHP_EOL;
+            return false;
+        }
+
         foreach($Row->getElementsByTagName("field") as $Field) {
             array_push($columns, (string) $Field->getAttribute("name"));
         }
@@ -74,7 +79,11 @@ class XMLTable
 
         //Create a re-usable column buffer:
         $columnBuffer = [];
-        foreach($this->getColumns() as $column) {
+        $columnList = $this->getColumns();
+
+        if($columnList === false){ return false; }
+
+        foreach($columnList as $column) {
             array_push($columnBuffer, $column);
         }
 
@@ -99,6 +108,8 @@ class XMLTable
     function insertRowData() {
         $tmpDoc = clone $this->XMLDoc;
         $sql = $this->createSQLStatement();
+
+        if($sql === false) return;
         
         $stmt = $this->PDO->prepare($sql);
         $this->PDO->beginTransaction();
@@ -118,7 +129,7 @@ class XMLTable
                 if(is_integer($value))  $value = (int) $value;
                 if(strlen($value) == 0) $value = NULL;
 
-                printf("Name => Value : (%s) => (%s) " . PHP_EOL, $name, $value);
+                // printf("Name => Value : (%s) => (%s) " . PHP_EOL, $name, $value);
                 $columns[$name] = $value;
 
             }

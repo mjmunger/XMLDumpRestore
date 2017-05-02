@@ -1,0 +1,9 @@
+{
+	"database" : {
+		"username" : "foouser",
+		"password" : "foopass",
+		"database" : "bazdatabase",
+		"server"   : "localhost"
+	},
+	"exclude" : [ "settings" ]
+}
