@@ -171,7 +171,7 @@ class XMLTest extends TestCase
     }
 
     function providerTestCreateSQLStatement() {
-        return  [ ['users', 'INSERT INTO `users` ( `users_id`, `users_email`, `users_password`, `users_first`, `users_last`, `users_setup`, `users_nonce`, `users_token`, `users_active`, `users_last_login`, `users_mobile_token`, `users_public_key`, `users_owner_id`, `users_timezone`, `users_roles_id`) VALUES ( ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)']
+        return  [ ['users', 'INSERT INTO `users` ( `users_id`, `users_email`, `users_password`, `users_first`, `users_last`, `users_setup`, `users_nonce`, `users_token`, `users_active`, `users_last_login`, `users_mobile_token`, `users_public_key`, `users_owner_id`, `users_timezone`, `users_roles_id`) VALUES ( :users_id, :users_email, :users_password, :users_first, :users_last, :users_setup, :users_nonce, :users_token, :users_active, :users_last_login, :users_mobile_token, :users_public_key, :users_owner_id, :users_timezone, :users_roles_id)']
                 ];
     }
 

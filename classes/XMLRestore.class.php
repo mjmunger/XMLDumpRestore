@@ -21,8 +21,6 @@ class XMLRestore
         $this->XmlDoc = new DOMDocument();
         $this->XmlDoc->load($this->xmlFilePath);
 
-        //var_dump($this->XmlDoc);
-
         foreach($this->XmlDoc->getElementsByTagName('database') as $Node) {
             //Get the attributes for this node.
             $this->database = (string) $Node->getAttribute("name");
@@ -38,9 +36,11 @@ class XMLRestore
         
         foreach($nodes as $node) {
             $name = (string) $node->getAttribute("name");
-            $T = new XMLTable($name, $node, $this->PDO);
+            // echo "Loading table: $name" . PHP_EOL;
+            $T = new XMLTable($name, clone $this->XmlDoc, $this->PDO);
             $this->tables[$name] = $T;
         }
+        
         return true;
     }
 

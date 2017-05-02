@@ -12,34 +12,9 @@ foreach($deps as $dep) {
     require_once($dep);
 }
 
-class XMLTableTest extends TestCase
+class XMLTableTest// **disabled because we no longer use simpleXML** extends TestCase
 {
 
-    /**
-     * @dataProvider providerTestParseTableName
-     * */
-
-    function testParseTableName($object,$expected) {
-        $XMLTable = new XMLTable($object);
-        $this->assertSame( $expected,$XMLTable->parseTableName() );
-    }
-
-    function providerTestParseTableName() {
-
-        $xml = simplexml_load_file('tests/authtest.xml');
-        $buffer  = [];
-
-        foreach($xml->database[0] as $table) {
-            foreach($table->attributes() as $name => $value) {
-                if($name == 'name') {
-                    array_push($buffer, [$table, (string) $value]);
-                }
-            }
-        }
-
-        return $buffer;
-
-    }
 
     /**
      * @dataProvider providerTestGetTableRows

@@ -4,23 +4,30 @@ namespace XMLRestore;
 
 class XMLTable
 {
-    public $XMLTable     = NULL;
+    public $XMLDoc     = NULL;
     public $tableName    = NULL;
     public $PDO          = NULL;
     public $tableColumns = [];
     public $tableRows    = [];
 
-    function __construct($tableName, $XMLTable, $PDO) {
+    function __construct($tableName, $XMLDoc, $PDO) {
         $this->tableName = $tableName;
-        $this->XMLTable = $XMLTable;
+        $this->XMLDoc = $XMLDoc;
         $this->PDO = $PDO;
+        $this->getTableRows();
     }
 
     function getColumns() {
         $columns = [];
 
-        //Get the first row.
-        $Rows = $this->XMLTable->getElementsByTagName('row');
+        //Get the first row. Use clone so we don't break the original
+        $tmpDoc = clone $this->XMLDoc;
+
+        foreach($tmpDoc->getElementsByTagName('table_data') as $table) {
+            if($table->getAttribute('name') != $this->tableName) continue;
+            $Rows = $table->getElementsByTagName("row");
+            break;
+        }
         $Row = $Rows->item(0);
 
         foreach($Row->getElementsByTagName("field") as $Field) {
@@ -33,8 +40,12 @@ class XMLTable
     }
 
     function getTableRows() {
-        foreach($this->XMLTable->row as $field) {
-            array_push($this->tableRows, $field);
+        $tmpDoc = clone $this->XMLDoc;
+        $tmpTable = $tmpDoc->getElementsByTagName("table_data");
+        foreach($tmpTable as $table) {
+            if($table->getAttribute('name') != $this->tableName) continue;
+
+            $this->tableRows = $table->getElementsByTagName("row");
         }
     }
 
@@ -42,7 +53,7 @@ class XMLTable
     function truncate() {
         $sql = sprintf("TRUNCATE %s",$this->tableName);
         $stmt = $this->PDO->prepare($sql);
-        $result = $stmt->execute($sql);
+        $result = $stmt->execute();
         return $result;
     }
 
@@ -51,26 +62,34 @@ class XMLTable
 
     }
 
+    public static function modValues($column) {
+        return sprintf(" :%s",$column);
+
+    }
+
     function createSQLStatement() {
         //Basic template.
         $sql = "INSERT INTO `%s` (%s) VALUES (%s)";
 
-        //Turn add field names to template.
+
+        //Create a re-usable column buffer:
         $columnBuffer = [];
         foreach($this->getColumns() as $column) {
             array_push($columnBuffer, $column);
         }
 
-        $columnBuffer = array_map(["XMLRestore\XMLTable","modFields"],$columnBuffer);
-
-        $valueBuffer = [];
-        for($x = 0; $x<count($columnBuffer) ; $x++) {
-            array_push($valueBuffer," ?");
+        //Turn add field names to template.
+        $fieldsBuffer = [];
+        foreach($this->getColumns() as $column) {
+            array_push($fieldsBuffer, $column);
         }
+
+        $fieldsBuffer = array_map(["XMLRestore\XMLTable","modFields"],$columnBuffer);
+        $valueBuffer  = array_map(["XMLRestore\XMLTable","modValues"],$columnBuffer);
 
         $sql = sprintf( $sql
                       , $this->tableName
-                      , implode(",", $columnBuffer)
+                      , implode(",", $fieldsBuffer)
                       , implode(",", $valueBuffer)
                       );
 
@@ -78,6 +97,35 @@ class XMLTable
     }
 
     function insertRowData() {
+        $tmpDoc = clone $this->XMLDoc;
+        $sql = $this->createSQLStatement();
         
+        $stmt = $this->PDO->prepare($sql);
+        $this->PDO->beginTransaction();
+ 
+        foreach($tmpDoc->getElementsByTagName('table_data') as $table) {
+            if($table->getAttribute('name') != $this->tableName) continue;
+            $Rows = $table->getElementsByTagName("row");
+            break;
+        }
+
+        foreach($Rows as $Row) {
+            $columns = [];
+            foreach($Row->getElementsByTagName("field") as $Field) {
+                $name  = $Field->getAttribute("name");
+                $value = $Field->nodeValue;
+
+                if(is_integer($value))  $value = (int) $value;
+                if(strlen($value) == 0) $value = NULL;
+
+                printf("Name => Value : (%s) => (%s) " . PHP_EOL, $name, $value);
+                $columns[$name] = $value;
+
+            }
+            //do the insert!
+            $stmt->execute($columns);
+        }
+
+        $this->PDO->commit();
     }
 }

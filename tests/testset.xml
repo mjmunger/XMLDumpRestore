@@ -1,0 +1,75 @@
+<?xml version="1.0"?>
+<mysqldump xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+<database name="phpant">
+	<table_data name="Version">
+	<row>
+		<field name="VersionId">1</field>
+	</row>
+	</table_data>
+	<table_data name="api_keys">
+	<row>
+		<field name="api_keys_id">1</field>
+		<field name="api_keys_key">1234</field>
+		<field name="api_keys_info">1234</field>
+		<field name="api_keys_enabled">Y</field>
+		<field name="api_keys_generated">2017-05-01 14:52:31</field>
+	</row>
+	</table_data>
+	<table_data name="users_roles">
+	<row>
+		<field name="users_roles_id">1</field>
+		<field name="users_roles_title">Admin</field>
+		<field name="users_roles_role">1</field>
+	</row>
+	<row>
+		<field name="users_roles_id">2</field>
+		<field name="users_roles_title">User</field>
+		<field name="users_roles_role">2</field>
+	</row>
+	</table_data>
+	<table_data name="users">
+	<row>
+		<field name="users_id">1</field>
+		<field name="users_email">testadmin@example.org</field>
+		<field name="users_password">asdf</field>
+		<field name="users_first">Test</field>
+		<field name="users_last">user</field>
+		<field name="users_setup">Y</field>
+		<field name="users_nonce"></field>
+		<field name="users_token"></field>
+		<field name="users_active"></field>
+		<field name="users_last_login" xsi:nil="true" />
+		<field name="users_mobile_token" xsi:nil="true" />
+		<field name="users_public_key" xsi:nil="true" />
+		<field name="users_owner_id" xsi:nil="true" />
+		<field name="users_timezone" xsi:nil="true" />
+		<field name="users_roles_id">1</field>
+	</row>
+	<row>
+		<field name="users_id">2</field>
+		<field name="users_email">testuser@example.org</field>
+		<field name="users_password">1234</field>
+		<field name="users_first">Test</field>
+		<field name="users_last">Admin</field>
+		<field name="users_setup">y</field>
+		<field name="users_nonce" xsi:nil="true" />
+		<field name="users_token" xsi:nil="true" />
+		<field name="users_active">Y</field>
+		<field name="users_last_login" xsi:nil="true" />
+		<field name="users_mobile_token" xsi:nil="true" />
+		<field name="users_public_key" xsi:nil="true" />
+		<field name="users_owner_id" xsi:nil="true" />
+		<field name="users_timezone" xsi:nil="true" />
+		<field name="users_roles_id">2</field>
+	</row>
+	</table_data>
+	<table_data name="email_log">
+	</table_data>
+	<table_data name="logs">
+	</table_data>
+	<table_data name="settings">
+	</table_data>
+	<table_data name="user_tokens">
+	</table_data>
+</database>
+</mysqldump>
